@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://io.jmix.dbtests/menu.application" insertBefore="security">
+        <item screen="dbt_User.browse" caption="msg://io.jmix.dbtests.screen.user/UserBrowse.caption"/>
+    </menu>
+
+</menu-config>

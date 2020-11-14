@@ -1,0 +1,72 @@
+plugins {
+    id 'io.jmix' version '0.1.18'
+    id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+
+jmix {
+    bomVersion = '0.2.0-SNAPSHOT'
+    projectId = 'dbt'
+}
+
+group = 'com.company'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven {
+        url 'https://nexus.jmix.io/repository/public'
+    }
+}
+
+dependencies {
+    implementation 'io.jmix.core:jmix-core-starter'
+    implementation 'io.jmix.data:jmix-data-starter'
+    implementation 'io.jmix.ui:jmix-ui-starter'
+    implementation 'io.jmix.ui:jmix-ui-data-starter'
+    implementation 'io.jmix.ui:jmix-ui-themes-compiled'
+    implementation 'io.jmix.ui:jmix-ui-widgets-compiled'
+    implementation 'io.jmix.security:jmix-security-starter'
+    implementation 'io.jmix.security:jmix-security-ui-starter'
+    implementation 'io.jmix.security:jmix-security-data-starter'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    runtimeOnly 'org.hsqldb:hsqldb'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+
+    testCompile 'org.junit.jupiter:junit-jupiter-api'
+    testCompile 'org.junit.jupiter:junit-jupiter-params'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    testCompile 'org.testcontainers:testcontainers:1.15.0'
+    testCompile 'org.testcontainers:junit-jupiter:1.15.0'
+    testCompile 'org.testcontainers:postgresql:1.15.0'
+    testCompile 'org.testcontainers:mssqlserver:1.15.0'
+    testCompile 'org.testcontainers:mysql:1.15.0'
+    testCompile 'org.testcontainers:mariadb:1.15.0'
+    testCompile 'org.testcontainers:oracle-xe:1.15.0'
+    testCompile 'org.firebirdsql:firebird-testcontainers-java:1.0.4'
+
+    testRuntimeOnly 'org.postgresql:postgresql'
+    testRuntimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
+    testRuntimeOnly 'mysql:mysql-connector-java'
+    testRuntimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    testRuntimeOnly 'com.oracle.ojdbc:ojdbc8'
+    testRuntimeOnly 'org.firebirdsql.jdbc:jaybird:4.0.1.java8'
+}
+
+test {
+    useJUnitPlatform()
+    if (project.hasProperty('oracleImage')) {
+        systemProperty "oracleImage", project.getProperty("oracleImage")
+    } else {
+        exclude '**/OracleTest.class'
+    }
+}
