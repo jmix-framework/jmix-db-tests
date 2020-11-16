@@ -19,7 +19,7 @@ public class FirebirdTest {
     DataManager dataManager;
 
     @Test
-    void testFbEntity() {
+    void testAbcEntity() {
         AbcEntity entity = dataManager.create(AbcEntity.class);
         entity.setName("e1");
         dataManager.save(entity);
