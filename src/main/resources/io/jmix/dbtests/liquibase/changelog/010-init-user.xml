@@ -36,10 +36,10 @@
 
         <insert tableName="DBT_USER">
             <column name="ID" value="60885987-1b61-4247-94c7-dff348347f93"/>
-<!--            <column name="VERSION" valueNumeric="1"/>-->
+            <column name="VERSION" valueNumeric="1"/>
             <column name="USERNAME" value="admin"/>
             <column name="PASSWORD" value="{noop}admin"/>
-<!--            <column name="ENABLED" valueBoolean="true"/>-->
+            <column name="ENABLED" valueBoolean="true"/>
         </insert>
 
     </changeSet>
