@@ -1,10 +1,10 @@
 package io.jmix.dbtests;
 
-import io.jmix.autoconfigure.data.JmixLiquibase;
+import io.jmix.autoconfigure.data.JmixLiquibaseCreator;
 import io.jmix.core.JmixModules;
+import io.jmix.core.Resources;
 import io.jmix.data.impl.JmixEntityManagerFactoryBean;
 import io.jmix.data.impl.JmixTransactionManager;
-import io.jmix.data.impl.PersistenceConfigProcessor;
 import io.jmix.data.impl.liquibase.LiquibaseChangeLogProcessor;
 import io.jmix.data.persistence.DbmsSpecifics;
 import liquibase.integration.spring.SpringLiquibase;
@@ -31,8 +31,11 @@ public class AbcStoreConfiguration {
     }
 
     @Bean
-    LocalContainerEntityManagerFactoryBean abcEntityManagerFactory(PersistenceConfigProcessor processor, JpaVendorAdapter jpaVendorAdapter, DbmsSpecifics dbmsSpecifics, JmixModules jmixModules) {
-        return new JmixEntityManagerFactoryBean("abc", abcDataSource(), processor, jpaVendorAdapter, dbmsSpecifics, jmixModules);
+    LocalContainerEntityManagerFactoryBean abcEntityManagerFactory(JpaVendorAdapter jpaVendorAdapter,
+                                                                   DbmsSpecifics dbmsSpecifics,
+                                                                   JmixModules jmixModules,
+                                                                   Resources resources) {
+        return new JmixEntityManagerFactoryBean("abc", abcDataSource(), jpaVendorAdapter, dbmsSpecifics, jmixModules, resources);
     }
 
     @Bean
@@ -42,6 +45,6 @@ public class AbcStoreConfiguration {
 
     @Bean
     public SpringLiquibase abcLiquibase(LiquibaseChangeLogProcessor processor) {
-        return JmixLiquibase.create(abcDataSource(), new LiquibaseProperties(), processor, "abc");
+        return JmixLiquibaseCreator.create(abcDataSource(), new LiquibaseProperties(), processor, "abc");
     }
 }

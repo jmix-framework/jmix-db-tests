@@ -48,11 +48,6 @@ public class FirebirdDbmsFeatures implements DbmsFeatures {
     }
 
     @Override
-    public boolean isSchemaByUser() {
-        return false;
-    }
-
-    @Override
     public boolean supportsLobSortingAndFiltering() {
         return false;
     }
