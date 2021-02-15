@@ -11,7 +11,7 @@
             <column name="ID" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="UUID" type="uuid"/>
+            <column name="UUID" type="${uuid.type}"/>
             <column name="VERSION" type="int">
                 <constraints nullable="false"/>
             </column>
