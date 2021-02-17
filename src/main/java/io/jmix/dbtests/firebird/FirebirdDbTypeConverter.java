@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * DbTypeConverter implementation for Firebird.
  */
-@Component("firebirdDbTypeConverter")
+@Component
 public class FirebirdDbTypeConverter implements DbTypeConverter {
 
     @Override
@@ -57,5 +57,10 @@ public class FirebirdDbTypeConverter implements DbTypeConverter {
         else if (javaClass == Long.class)
             return Types.BIGINT;
         return Types.OTHER;
+    }
+
+    @Override
+    public String getTypeAndVersion() {
+        return "firebird";
     }
 }

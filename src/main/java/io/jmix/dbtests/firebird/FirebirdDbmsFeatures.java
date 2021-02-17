@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * DbmsFeatures implementation for Firebird.
  */
-@Component("firebirdDbmsFeatures")
+@Component
 public class FirebirdDbmsFeatures implements DbmsFeatures {
 
     @Override
@@ -50,5 +50,10 @@ public class FirebirdDbmsFeatures implements DbmsFeatures {
     @Override
     public boolean supportsLobSortingAndFiltering() {
         return false;
+    }
+
+    @Override
+    public String getTypeAndVersion() {
+        return "firebird";
     }
 }
