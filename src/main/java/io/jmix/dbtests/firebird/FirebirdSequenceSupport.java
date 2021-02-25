@@ -1,6 +1,6 @@
 package io.jmix.dbtests.firebird;
 
-import io.jmix.data.SequenceSupport;
+import io.jmix.data.persistence.SequenceSupport;
 import org.springframework.stereotype.Component;
 
 /**
