@@ -8,7 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testcontainers.shaded.org.apache.commons.lang.RandomStringUtils;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public abstract class MainDataStoreTest {
 
@@ -23,6 +26,13 @@ public abstract class MainDataStoreTest {
 
         User user1 = dataManager.load(Id.of(user)).one();
         assertEquals(user, user1);
+    }
+
+    @Test
+    void testLoadUserById() {
+        User user = dataManager.load(Id.of(UUID.fromString("60885987-1b61-4247-94c7-dff348347f93"), User.class)).one();
+        assertNotNull(user);
+        assertEquals("admin", user.getUsername());
     }
 
     @Test
