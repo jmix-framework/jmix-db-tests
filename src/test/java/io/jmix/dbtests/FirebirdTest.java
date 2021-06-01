@@ -1,7 +1,7 @@
 package io.jmix.dbtests;
 
-import io.jmix.core.DataManager;
 import io.jmix.core.Id;
+import io.jmix.core.UnconstrainedDataManager;
 import io.jmix.dbtests.entity.AbcEntity;
 import io.jmix.dbtests.init.FirebirdInitializer;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FirebirdTest {
 
     @Autowired
-    DataManager dataManager;
+    UnconstrainedDataManager dataManager;
 
     @Test
     void testAbcEntity() {
