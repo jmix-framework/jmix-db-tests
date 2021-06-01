@@ -2,6 +2,7 @@ package io.jmix.dbtests;
 
 import io.jmix.core.DataManager;
 import io.jmix.core.Id;
+import io.jmix.core.UnconstrainedDataManager;
 import io.jmix.dbtests.entity.LongIdEntity;
 import io.jmix.dbtests.entity.User;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public abstract class MainDataStoreTest {
 
     @Autowired
-    DataManager dataManager;
+    UnconstrainedDataManager dataManager;
 
     @Test
     void testUser() {
