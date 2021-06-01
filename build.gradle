@@ -16,7 +16,6 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenLocal()
-    jcenter()
     maven {
         url 'https://nexus.jmix.io/repository/public'
     }
