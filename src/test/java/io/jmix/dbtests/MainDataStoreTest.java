@@ -1,6 +1,5 @@
 package io.jmix.dbtests;
 
-import io.jmix.core.DataManager;
 import io.jmix.core.Id;
 import io.jmix.core.UnconstrainedDataManager;
 import io.jmix.dbtests.entity.LongIdEntity;
