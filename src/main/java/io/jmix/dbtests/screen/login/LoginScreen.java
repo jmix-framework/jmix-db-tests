@@ -3,7 +3,9 @@ package io.jmix.dbtests.screen.login;
 import com.vaadin.server.VaadinServletRequest;
 import com.vaadin.server.VaadinServletResponse;
 import io.jmix.core.CoreProperties;
+import io.jmix.core.MessageTools;
 import io.jmix.core.Messages;
+import io.jmix.core.MetadataTools;
 import io.jmix.core.security.ClientDetails;
 import io.jmix.ui.Notifications;
 import io.jmix.ui.ScreenBuilders;
@@ -68,6 +70,9 @@ public class LoginScreen extends Screen {
     @Autowired(required = false)
     private SessionAuthenticationStrategy authenticationStrategy;
 
+    @Autowired
+    private MessageTools messageTools;
+
     @Subscribe
     private void onInit(InitEvent event) {
         usernameField.focus();
@@ -76,8 +81,8 @@ public class LoginScreen extends Screen {
     }
 
     private void initLocalesField() {
-        localesField.setOptionsMap(coreProperties.getAvailableLocales());
-        localesField.setValue(coreProperties.getAvailableLocales().values().iterator().next());
+        localesField.setOptionsMap(messageTools.getAvailableLocalesMap());
+        localesField.setValue(coreProperties.getAvailableLocales().get(0));
     }
 
     private void initDefaultCredentials() {
