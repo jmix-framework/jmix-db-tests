@@ -51,12 +51,12 @@ dependencies {
     implementation 'io.jmix.multitenancy:jmix-multitenancy-starter'
     implementation 'io.jmix.multitenancy:jmix-multitenancy-ui-starter'
 
-    implementation 'io.jmix.bpm:jmix-bpm-starter'
-    implementation 'io.jmix.bpm:jmix-bpm-rest-starter'
-    implementation 'io.jmix.bpm:jmix-bpm-ui-starter'
-
-    implementation 'io.jmix.maps:jmix-maps-starter'
-    implementation 'io.jmix.maps:jmix-maps-ui-starter'
+//    implementation 'io.jmix.bpm:jmix-bpm-starter'
+//    implementation 'io.jmix.bpm:jmix-bpm-rest-starter'
+//    implementation 'io.jmix.bpm:jmix-bpm-ui-starter'
+//
+//    implementation 'io.jmix.maps:jmix-maps-starter'
+//    implementation 'io.jmix.maps:jmix-maps-ui-starter'
 
     implementation 'io.jmix.search:jmix-search-starter'
     implementation 'io.jmix.search:jmix-search-ui-starter'
@@ -66,6 +66,8 @@ dependencies {
 
     implementation 'io.jmix.emailtemplates:jmix-emailtemplates-starter'
     implementation 'io.jmix.emailtemplates:jmix-emailtemplates-ui-starter'
+
+//    implementation 'io.jmix.cuba:jmix-cuba-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
