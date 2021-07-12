@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'org.springframework.boot'
 
 jmix {
-    bomVersion = '1.0.0-SNAPSHOT'
+    bomVersion = '1.1.0-SNAPSHOT'
     projectId = 'dbt'
 }
 
@@ -51,9 +51,12 @@ dependencies {
     implementation 'io.jmix.multitenancy:jmix-multitenancy-starter'
     implementation 'io.jmix.multitenancy:jmix-multitenancy-ui-starter'
 
-//    implementation 'io.jmix.bpm:jmix-bpm-starter'
-//    implementation 'io.jmix.bpm:jmix-bpm-rest-starter'
-//    implementation 'io.jmix.bpm:jmix-bpm-ui-starter'
+    implementation 'io.jmix.bpm:jmix-bpm-starter'
+    implementation 'io.jmix.bpm:jmix-bpm-rest-starter'
+    implementation 'io.jmix.bpm:jmix-bpm-ui-starter'
+
+    implementation 'io.jmix.maps:jmix-maps-starter'
+    implementation 'io.jmix.maps:jmix-maps-ui-starter'
 
     implementation 'io.jmix.search:jmix-search-starter'
     implementation 'io.jmix.search:jmix-search-ui-starter'
