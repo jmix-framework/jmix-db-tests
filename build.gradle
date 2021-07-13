@@ -67,7 +67,7 @@ dependencies {
     implementation 'io.jmix.emailtemplates:jmix-emailtemplates-starter'
     implementation 'io.jmix.emailtemplates:jmix-emailtemplates-ui-starter'
 
-//    implementation 'io.jmix.cuba:jmix-cuba-starter'
+    implementation 'io.jmix.cuba:jmix-cuba-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
