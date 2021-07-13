@@ -51,7 +51,7 @@ dependencies {
     implementation 'io.jmix.multitenancy:jmix-multitenancy-starter'
     implementation 'io.jmix.multitenancy:jmix-multitenancy-ui-starter'
 
-//    implementation 'io.jmix.bpm:jmix-bpm-starter'
+    implementation 'io.jmix.bpm:jmix-bpm-starter'
 //    implementation 'io.jmix.bpm:jmix-bpm-rest-starter'
 //    implementation 'io.jmix.bpm:jmix-bpm-ui-starter'
 //
