@@ -41,6 +41,7 @@ dependencies {
 
     implementation 'io.jmix.audit:jmix-audit-starter'
     implementation 'io.jmix.bpm:jmix-bpm-starter'
+    implementation 'io.jmix.businesscalendar:jmix-businesscalendar-starter'
     implementation 'io.jmix.dashboards:jmix-dashboards-starter'
     implementation 'io.jmix.dynattr:jmix-dynattr-starter'
     implementation 'io.jmix.email:jmix-email-starter'
@@ -48,6 +49,7 @@ dependencies {
     implementation 'io.jmix.imap:jmix-imap-starter'
     implementation 'io.jmix.maps:jmix-maps-starter'
     implementation 'io.jmix.multitenancy:jmix-multitenancy-starter'
+    implementation 'io.jmix.notifications:jmix-notifications-starter'
     implementation 'io.jmix.reports:jmix-reports-starter'
     implementation 'io.jmix.search:jmix-search-starter'
     implementation 'io.jmix.security:jmix-security-oauth2'
