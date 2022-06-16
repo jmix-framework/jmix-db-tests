@@ -7,8 +7,9 @@ import org.testcontainers.containers.MSSQLServerContainer;
 
 public class SqlserverInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-    static MSSQLServerContainer<?> container = new MSSQLServerContainer<>()
-            .acceptLicense();
+    static MSSQLServerContainer<?> container = new MSSQLServerContainer<>("mcr.microsoft.com/mssql/server:2017-CU12")
+            .acceptLicense()
+            .withUrlParam("encrypt", "false");
 
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
