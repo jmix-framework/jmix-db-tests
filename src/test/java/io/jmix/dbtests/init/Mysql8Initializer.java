@@ -9,8 +9,7 @@ public class Mysql8Initializer implements ApplicationContextInitializer<Configur
 
     static MySQLContainer<?> container = new MySQLContainer<>("mysql:8.0.29")
             .withDatabaseName("test-db")
-            .withUsername("test")
-            .withPassword("pass");
+            .withUsername("root");
 
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
