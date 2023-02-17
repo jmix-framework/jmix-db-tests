@@ -5,7 +5,6 @@ import io.jmix.core.JmixModules;
 import io.jmix.core.Resources;
 import io.jmix.data.impl.JmixEntityManagerFactoryBean;
 import io.jmix.data.impl.JmixTransactionManager;
-import io.jmix.data.impl.liquibase.LiquibaseChangeLogProcessor;
 import io.jmix.data.persistence.DbmsSpecifics;
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -43,8 +42,15 @@ public class AbcStoreConfiguration {
         return new JmixTransactionManager("abc", entityManagerFactory);
     }
 
-    @Bean
-    public SpringLiquibase abcLiquibase(LiquibaseChangeLogProcessor processor) {
-        return JmixLiquibaseCreator.create(abcDataSource(), new LiquibaseProperties(), processor, "abc");
+    @Bean("abcLiquibaseProperties")
+    @ConfigurationProperties(prefix = "abc.liquibase")
+    public LiquibaseProperties abcLiquibaseProperties() {
+        return new LiquibaseProperties();
+    }
+
+    @Bean("abcLiquibase")
+    public SpringLiquibase abcLiquibase(@Qualifier("abcDataSource") DataSource dataSource,
+                                        @Qualifier("abcLiquibaseProperties") LiquibaseProperties liquibaseProperties) {
+        return JmixLiquibaseCreator.create(dataSource, liquibaseProperties);
     }
 }
